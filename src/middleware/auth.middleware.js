@@ -4,7 +4,6 @@ import {User} from "../models/user.model.js";
 
 export async function authVerify(req, res, next){
     const header = req.headers.authorization || '';
-    console.log("header", header);
 
     const token = header.startsWith('Bearer ') ? header.slice(7) : null;
 

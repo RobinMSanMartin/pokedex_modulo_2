@@ -1,7 +1,10 @@
 // scripts/seed-150.js
 import fetch from 'node-fetch';
+import bcrypt from "bcryptjs";
 import { connectMongo } from '../src/config/db.js';
 import { Pokemon } from '../src/models/pokemon.model.js';
+import { User } from "../src/models/user.model.js";
+
 
 async function getPokemon(id) {
   const res  = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
@@ -32,6 +35,16 @@ async function seed() {
   await Pokemon.deleteMany({});
   await Pokemon.insertMany(docs);
   console.log(`✅ Insertados ${docs.length} pokemones (1-150)`);
+
+
+  console.log('⬇️  Ingresando Usuario');
+
+
+  const hashed = await bcrypt.hash('admin123', 10);
+  await User.create({ username:'RobinSanMartin', email:'rsanmartin@gmail.com', password: hashed });
+
+  console.log(`✅ Usuario RobinSanMartin Creado!`);
+
   process.exit(0);
 }
 
