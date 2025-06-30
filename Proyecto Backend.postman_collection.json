@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "c00dda26-59be-4f82-a259-10bdf9d691cc",
+		"name": "Proyecto Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45071811",
+		"_collection_link": "https://robin-3576499.postman.co/workspace/Robin's-Workspace~e1f1e061-c721-4d37-878d-ab5c32a0bf27/collection/45071811-c00dda26-59be-4f82-a259-10bdf9d691cc?action=share&source=collection_link&creator=45071811"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "USER_LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"RobinSanMartin\",\r\n    \"email\": \"rsanmartin@gmail.com\",\r\n    \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{auth_base_url}}/login",
+							"host": [
+								"{{auth_base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USER_REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Nicolas santino\",\r\n    \"email\":\"nssanmartin@gmail.com\",\r\n    \"password\":\"asdqwe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{auth_base_url}}/register",
+							"host": [
+								"{{auth_base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POKEMONS",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODYxZThmMzRkYWFjYTgzY2Y5NTVjYjEiLCJ1c2VybmFtZSI6IlJvYmluU2FuTWFydGluIiwiaWF0IjoxNzUxMjQ3MTEwLCJleHAiOjE3NTEyNTQzMTB9.i4YStvbGKgZe5arvsrODIVBw7yyz3YF6M6lefR8gldM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{pokemon_base_url}}/",
+							"host": [
+								"{{pokemon_base_url}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODYwZDYzZDMwYTUwMjU4M2I2YzE1MDQiLCJ1c2VybmFtZSI6IlJvYmluU2FuTWFydGluIiwiaWF0IjoxNzUxMTc2NzkxLCJleHAiOjE3NTExODM5OTF9.j75PDBnhzNfZyT0SYF8mQFiAwM1CIxe_8AA7soXlO9g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{pokemon_base_url}}/6861c7ae66865c3b31329392",
+							"host": [
+								"{{pokemon_base_url}}"
+							],
+							"path": [
+								"6861c7ae66865c3b31329392"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": 999,\r\n    \"name\": \"prueba\",\r\n    \"types\":  [\"type1\" ,\"type2\"],\r\n    \"attacks\": [\"atack1\",\"atack2\"],\r\n    \"height\": 0.99,\r\n    \"weight\": 5.1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{pokemon_base_url}}/",
+							"host": [
+								"{{pokemon_base_url}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": 999,\r\n    \"name\": \"prueba\",\r\n    \"types\":  [\"type1\" ,\"type2\", \"type3\"],\r\n    \"attacks\": [\"atack1\",\"atack2\"],\r\n    \"height\": 0.99,\r\n    \"weight\": 5.1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{pokemon_base_url}}/6861cd58cabca600aa0eb776",
+							"host": [
+								"{{pokemon_base_url}}"
+							],
+							"path": [
+								"6861cd58cabca600aa0eb776"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{pokemon_base_url}}/6861cd58cabca600aa0eb776",
+							"host": [
+								"{{pokemon_base_url}}"
+							],
+							"path": [
+								"6861cd58cabca600aa0eb776"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "auth_base_url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "pokemon_base_url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
